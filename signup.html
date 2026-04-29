@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farmers Platform - Create Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(90deg, #f6fbef 0%, #e9f6ee 35%, #dff4f6 100%);
+      overflow: hidden;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .left {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 40%, rgba(255,255,255,0.45), transparent 18%),
+        linear-gradient(90deg, rgba(245,252,240,0.95), rgba(224,246,231,0.88), rgba(220,244,247,0.82));
+    }
+
+    .left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('reg.jpg') center center / cover no-repeat;
+      opacity: 0.78;
+      filter: saturate(0.9) brightness(1.05);
+    }
+
+    .logo {
+      position: absolute;
+      top: 48px;
+      left: 180px;
+      z-index: 2;
+      color: #4f8f69;
+      font-size: 62px;
+      line-height: 0.9;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .right {
+      width: 46%;
+      min-width: 560px;
+      background: #fff;
+      border-radius: 22px 0 0 22px;
+      box-shadow: -6px 0 25px rgba(0,0,0,0.08);
+      padding: 52px 56px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      z-index: 3;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: 800;
+      color: #2e3138;
+      margin-bottom: 40px;
+      letter-spacing: -1px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form input {
+      height: 52px;
+      border: 1px solid #d9d9df;
+      border-radius: 6px;
+      padding: 0 18px;
+      font-size: 16px;
+      color: #333;
+      outline: none;
+      background: #fff;
+      transition: 0.2s ease;
+    }
+
+    .form input::placeholder {
+      color: #7a7f87;
+    }
+
+    .form input:focus {
+      border-color: #b54d29;
+      box-shadow: 0 0 0 3px rgba(181,77,41,0.08);
+    }
+
+    .terms {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #6e6e77;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .terms a {
+      color: #5b78d6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn {
+      margin-top: 22px;
+      height: 50px;
+      border: none;
+      border-radius: 4px;
+      background: #b34f25;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #9f451f;
+    }
+
+    .login {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .login a {
+      color: #b34f25;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 1100px) {
+      body { overflow: auto; }
+      .page {
+        flex-direction: column;
+      }
+      .left {
+        min-height: 380px;
+      }
+      .right {
+        width: 100%;
+        min-width: unset;
+        border-radius: 22px 22px 0 0;
+      }
+      .logo {
+        left: 40px;
+        top: 40px;
+        font-size: 48px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .right {
+        padding: 32px 20px 24px;
+      }
+      .title {
+        font-size: 34px;
+      }
+      .logo {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="left">
+      <div class="logo">AI Smart<br>Farmer</div>
+    </div>
+
+    <div class="right">
+      <div class="title">Create Account</div>
+
+      <form class="form">
+        <input type="text" placeholder="Your First Name" />
+        <input type="text" placeholder="Your Last Name" />
+        <input type="tel" placeholder="Your Mobile Number" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Enter Password" />
+        <input type="password" placeholder="Confirm Password" />
+
+        <div class="terms">
+          By continuing, you agree to farmers platform’s
+          <a href="#">Terms of Use</a> and
+          <a href="#">Privacy Policy.</a>
+        </div>
+
+        <button class="btn" type="submit">CREATE ACCOUNT</button>
+
+        <div class="login">
+          Already have an account? <a href="#">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
