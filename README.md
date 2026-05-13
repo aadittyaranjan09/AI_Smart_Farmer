@@ -103,4 +103,4 @@ Licensed under the ISC License.
 👥 Team
 Rudrapratap — @Rudrapratap0005
 Aadittya Ranjan — @aadittyaranjan09
-Sumit Karan - @Sumit-karan123
+Sumit Karan - @Sumit-karan123.
