@@ -1,169 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>README - AI Smart Farmer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project README | AI Smart Farmer</title>
+  <style>
+    :root {
+      --bg-1: #123524;
+      --bg-2: #2e7d32;
+      --panel: rgba(255, 255, 255, 0.12);
+      --panel-border: rgba(255, 255, 255, 0.2);
+      --text: #effaf1;
+      --muted: #d7ead8;
+      --accent: #ffd54f;
+      --code-bg: rgba(7, 20, 12, 0.55);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+    }
 
-<style>
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background: linear-gradient(to right, #1b5e20, #66bb6a);
-  color: #fff;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-/* Container */
-.container {
-  max-width: 1000px;
-  margin: 40px auto;
-  background: rgba(255,255,255,0.1);
-  padding: 30px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-}
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 213, 79, 0.18), transparent 28%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      line-height: 1.65;
+    }
 
-/* Headings */
-h1, h2 {
-  color: #c8facc;
-}
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: 32px;
+      border-radius: 24px;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
 
-/* Sections */
-.section {
-  margin-bottom: 25px;
-}
+    .hero {
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
 
-/* Code block */
-code {
-  background: rgba(0,0,0,0.3);
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
-}
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
 
-/* List */
-ul {
-  line-height: 1.8;
-}
+    h1, h2, h3 {
+      margin-top: 0;
+      color: #ffffff;
+    }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: #ddd;
-}
-</style>
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
 
+    h2 {
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .hero p:last-child,
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .card,
+    .section {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .section {
+      margin-top: 22px;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.04rem;
+      color: #ffffff;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      background: var(--code-bg);
+      color: #f4ffb1;
+      padding: 2px 8px;
+      border-radius: 8px;
+    }
+
+    pre {
+      margin: 14px 0 0;
+      padding: 18px;
+      overflow-x: auto;
+      border-radius: 16px;
+      background: var(--code-bg);
+      color: #edf6c5;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-size: 0.92rem;
+    }
+
+    a {
+      color: #fff6a3;
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 20px, 1120px);
+        padding: 20px;
+        margin: 18px auto;
+      }
+    }
+  </style>
 </head>
 <body>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Project Documentation</p>
+      <h1>AI Smart Farmer</h1>
+      <p>
+        AI Smart Farmer is a full-stack agriculture web application that combines weather intelligence,
+        crop recommendation, user authentication, profile management, and dashboard-style farm insights in one place.
+      </p>
+      <p>
+        This project is built as a modern Node.js and Express application with a static frontend, JSON fallback storage,
+        optional MongoDB persistence, and protected user flows for login, profile updates, and prediction history.
+      </p>
 
-<div class="container">
+      <div class="pill-row">
+        <span class="pill">Node.js</span>
+        <span class="pill">Express</span>
+        <span class="pill">MongoDB Optional</span>
+        <span class="pill">JWT Auth</span>
+        <span class="pill">HTML / CSS / JavaScript</span>
+        <span class="pill">Weather APIs</span>
+      </div>
+    </section>
 
-<h1>🌾 AI Smart Farmer</h1>
-<p>
-AI Smart Farmer is a web-based platform designed to help farmers make smart decisions using modern technologies like AI, APIs, and real-time data.
-</p>
+    <section class="grid">
+      <article class="card">
+        <strong>Purpose</strong>
+        <p>Help farmers and agriculture users make faster decisions with weather data, crop suggestions, and a guided dashboard experience.</p>
+      </article>
+      <article class="card">
+        <strong>Current Scope</strong>
+        <p>The app already supports authentication, live weather lookup, geolocation usage, crop prediction, local history, and profile management.</p>
+      </article>
+      <article class="card">
+        <strong>Deployment Ready</strong>
+        <p>The codebase includes a Render configuration and can run with MongoDB or fallback local JSON data files when the database is unavailable.</p>
+      </article>
+    </section>
 
-<!-- Problem -->
-<div class="section">
-<h2>🚨 Problem Statement</h2>
-<ul>
-  <li>Farmers lack real-time weather information</li>
-  <li>Difficulty in identifying crop diseases</li>
-  <li>No proper crop recommendation system</li>
-  <li>Limited access to smart farming tools</li>
-</ul>
-</div>
+    <section class="section">
+      <h2>Core Features</h2>
+      <ul>
+        <li>User registration and login with email and password.</li>
+        <li>Google sign-in flow support from the frontend integration.</li>
+        <li>JWT-based protected routes for profile and session validation.</li>
+        <li>Live weather search by city or by browser geolocation coordinates.</li>
+        <li>Automatic fallback to Open-Meteo when the OpenWeather API key is rejected.</li>
+        <li>Weather alerts for rain, thunderstorm, high wind, and heat stress conditions.</li>
+        <li>Simple crop recommendation logic based on temperature and humidity.</li>
+        <li>Prediction history tracking with MongoDB or JSON storage fallback.</li>
+        <li>Profile update support with theme and locale preferences.</li>
+        <li>Dashboard widgets for soil tips, mock disease analysis, and farm analytics.</li>
+      </ul>
+    </section>
 
-<!-- Solution -->
-<div class="section">
-<h2>💡 Solution</h2>
-<p>
-AI Smart Farmer provides an all-in-one dashboard that integrates multiple smart farming tools in a simple and user-friendly interface.
-</p>
-</div>
+    <section class="section">
+      <h2>How the App Works</h2>
+      <div class="two-col">
+        <article class="card">
+          <strong>Frontend Flow</strong>
+          <p>
+            Users sign in, open the dashboard, fetch weather by city or location, generate crop recommendations,
+            review prediction history, and manage their profile from dedicated pages under the <code>public</code> folder.
+          </p>
+        </article>
+        <article class="card">
+          <strong>Backend Flow</strong>
+          <p>
+            Express serves static files, exposes authentication and farming APIs, validates sessions with JWT,
+            and stores user or prediction data in MongoDB when available, or local JSON files otherwise.
+          </p>
+        </article>
+      </div>
+    </section>
 
-<!-- Features -->
-<div class="section">
-<h2>✨ Features</h2>
-<ul>
-  <li>📍 Farm Location Detection (Geolocation API)</li>
-  <li>🌤 Real-time Weather Updates (OpenWeather API)</li>
-  <li>🌱 AI Crop Recommendation</li>
-  <li>🧪 Soil Health Tips</li>
-  <li>📷 Crop Disease Detection (AI Concept)</li>
-  <li>⚠️ Weather Alerts</li>
-  <li>🔐 Firebase Authentication (Google Sign-In)</li>
-  <li>🌙 Dark/Light Mode</li>
-</ul>
-</div>
+    <section class="section">
+      <h2>Technology Stack</h2>
+      <ul>
+        <li>Frontend: HTML5, CSS3, vanilla JavaScript, Chart.js, Leaflet.</li>
+        <li>Backend: Node.js, Express 5.</li>
+        <li>Authentication: JWT, bcryptjs, frontend Google sign-in integration.</li>
+        <li>Database: MongoDB with Mongoose.</li>
+        <li>Fallback storage: local JSON files in <code>data/users.json</code> and <code>data/predictions.json</code>.</li>
+        <li>External services: OpenWeather API and Open-Meteo geocoding/forecast fallback.</li>
+      </ul>
+    </section>
 
-<!-- Tech Stack -->
-<div class="section">
-<h2>🛠 Tech Stack</h2>
-<ul>
-  <li>Frontend: HTML, CSS, JavaScript</li>
-  <li>Backend: Firebase</li>
-  <li>APIs: OpenWeather API, Geolocation API</li>
-  <li>Charts: Chart.js</li>
-</ul>
-</div>
+    <section class="section">
+      <h2>Important API Endpoints</h2>
+      <div class="two-col">
+        <article class="card">
+          <strong>Authentication</strong>
+          <ul>
+            <li><code>POST /api/auth/register</code> - Create a new user account.</li>
+            <li><code>POST /api/auth/login</code> - Sign in with email and password.</li>
+            <li><code>POST /api/auth/google</code> - Sign in or create account with Google details.</li>
+            <li><code>GET /api/auth/me</code> - Fetch the currently authenticated user.</li>
+            <li><code>PUT /api/auth/profile</code> - Update profile, avatar, theme, and locale.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <strong>Farm Intelligence</strong>
+          <ul>
+            <li><code>GET /api/weather</code> - Fetch current weather and forecast by city or coordinates.</li>
+            <li><code>POST /api/predict</code> - Generate a crop recommendation.</li>
+            <li><code>GET /api/history</code> - Read recent crop prediction history.</li>
+            <li><code>GET /api/health</code> - Check API and storage health.</li>
+            <li><code>GET /health</code> - Basic server health response.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-<!-- Project Structure -->
-<div class="section">
-<h2>📂 Project Structure</h2>
-<code>
-/project <br>
- ├── index.html <br>
- ├── login.html <br>
- ├── signup.html <br>
- ├── profile.html <br>
- ├── readme.html <br>
- ├── /css <br>
- ├── /js <br>
- ├── /assets
-</code>
-</div>
+    <section class="section">
+      <h2>Project Structure</h2>
+      <pre><code>D:\Project
+|-- server.js
+|-- package.json
+|-- render.yaml
+|-- data/
+|   |-- users.json
+|   `-- predictions.json
+|-- models/
+|   |-- User.js
+|   `-- CropData.js
+|-- public/
+|   |-- index.html
+|   |-- Dashboard.html
+|   |-- css/
+|   |   `-- main.css
+|   |-- js/
+|   |   |-- api.js
+|   |   |-- auth.js
+|   |   |-- dashboard.js
+|   |   |-- login.js
+|   |   |-- profile.js
+|   |   `-- theme.js
+|   `-- pages/
+|       |-- login.html
+|       |-- signup.html
+|       |-- profile.html
+|       `-- readMe.html
+`-- src/
+    |-- app.js
+    |-- config/
+    |-- lib/
+    |-- middleware/
+    `-- routes/</code></pre>
+    </section>
 
-<!-- How to Run -->
-<div class="section">
-<h2>🚀 How to Run</h2>
-<ul>
-  <li>Clone or download the project</li>
-  <li>Open project folder</li>
-  <li>Run using Live Server</li>
-  <li>Add your API keys in JS file</li>
-</ul>
-</div>
+    <section class="section">
+      <h2>Environment Variables</h2>
+      <ul>
+        <li><code>PORT</code> - Server port. Defaults to <code>5000</code>.</li>
+        <li><code>JWT_SECRET</code> - Required for authentication token signing.</li>
+        <li><code>MONGO_URI</code> - Optional MongoDB connection string.</li>
+        <li><code>OPENWEATHER_API_KEY</code> - Required for the primary weather provider.</li>
+      </ul>
+      <p>
+        If <code>MONGO_URI</code> is missing or the connection fails, the app continues with local JSON storage.
+        If the weather key fails with an authorization error, the backend falls back to Open-Meteo for live weather data.
+      </p>
+    </section>
 
-<!-- Future Scope -->
-<div class="section">
-<h2>🔮 Future Scope</h2>
-<ul>
-  <li>Advanced AI crop disease detection</li>
-  <li>Multi-language support</li>
-  <li>Mobile app version</li>
-  <li>AI chatbot for farmers</li>
-  <li>SaaS subscription model</li>
-</ul>
-</div>
+    <section class="section">
+      <h2>Run the Project</h2>
+      <ol>
+        <li>Install dependencies with <code>npm install</code>.</li>
+        <li>Create a <code>.env</code> file and add the required keys.</li>
+        <li>Start the server with <code>npm run dev</code> for development or <code>npm start</code> for production.</li>
+        <li>Open the app in your browser through the running Express server.</li>
+      </ol>
+      <pre><code>PORT=5000
+JWT_SECRET=your-secret-key
+MONGO_URI=your-mongodb-uri
+OPENWEATHER_API_KEY=your-openweather-key</code></pre>
+    </section>
 
-<!-- Contributors -->
-<div class="section">
-<h2>👨‍💻 Contributors</h2>
-<ul>
-  <li>Aditya Ranjan – Frontend & Backend Developer</li>
-  <li>Rudra – Frontend Developer</li>
-  <li>Sumit – AI Engineer</li>
-</ul>
-</div>
+    <section class="section">
+      <h2>Current Limitations and Future Improvements</h2>
+      <ul>
+        <li>The crop recommendation engine currently uses simple rule-based logic instead of a trained ML model.</li>
+        <li>Disease detection is a mock UI flow and does not yet call a real image classification service.</li>
+        <li>Analytics data is currently static and can be replaced with real farm performance metrics.</li>
+        <li>Localization preferences exist, but multilingual UI implementation is still pending.</li>
+        <li>An AI chatbot, subscription plans, and admin tools are planned areas for expansion.</li>
+      </ul>
+    </section>
 
-<footer>
-© 2026 AI Smart Farmer | Built with ❤️ for Smart Agriculture
-</footer>
+    <section class="section">
+      <h2>Summary</h2>
+      <p>
+        AI Smart Farmer is a practical smart agriculture dashboard project that already demonstrates strong full-stack structure:
+        secure authentication, external API usage, fallback resilience, dashboard UX, and deployment readiness. This README page
+        can serve as an in-app documentation page for demos, project reviews, or portfolio presentation.
+      </p>
+    </section>
 
-</div>
-
+    <footer>
+      AI Smart Farmer documentation page for the current project build.
+    </footer>
+  </main>
 </body>
 </html>
