@@ -1,148 +1,106 @@
-# 🌾 AI Smart Farmer
+🌾 AI Smart Farmer
+An AI-powered web application that helps farmers make smarter agricultural decisions through crop predictions, real-time weather data, and personalized recommendations.
 
-An AI-powered smart farming solution designed to help farmers make better agricultural decisions using modern technologies like Artificial Intelligence, Machine Learning, weather analysis, and smart crop recommendations.
+Node.js Express MongoDB
 
----
+📌 About
+AI Smart Farmer is a full-stack web application that combines weather intelligence with AI-based crop prediction to assist farmers in planning their agricultural activities. The platform provides personalized dashboards, crop recommendations, and weather-aware insights based on the user's location and soil conditions.
 
-## 🚀 Features
-
-- 🌱 Smart Crop Recommendation
-- 🌦️ Weather Analysis & Prediction
-- 🧠 AI-Based Farming Assistance
-- 📊 Soil & Environmental Data Analysis
-- 🔍 Disease Detection Support
-- 🤖 Machine Learning Integration
-- 📱 User-Friendly Interface
-- ☁️ Real-Time Data Processing
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Python / Flask
-- **AI/ML:** TensorFlow, Scikit-learn
-- **Database:** SQLite / Firebase *(if used)*
-- **APIs:** Weather API / AI APIs
-- **Version Control:** Git & GitHub
-
----
-
-## 📂 Project Structure
-
-```bash
+✨ Features
+User Authentication — Secure registration and login with JWT tokens and bcrypt password hashing
+Google Sign-In — Social authentication via Firebase
+Real-Time Weather — Live weather data powered by OpenWeather API
+AI Crop Predictions — Smart crop suggestions based on environmental conditions
+Personalized Dashboard — View predictions, weather info, and account details
+Profile Customization — Multiple profile templates to choose from
+Dual Storage — MongoDB Atlas as primary database with local JSON fallback
+Responsive Design — Works seamlessly on desktop, tablet, and mobile
+🛠️ Tech Stack
+Layer	Technologies
+Backend	Node.js, Express.js v5, Mongoose v9
+Frontend	HTML5, CSS3, JavaScript
+Database	MongoDB Atlas (with JSON fallback)
+Auth	JWT, bcryptjs, Firebase Auth
+API	OpenWeather API
+Deployment	Render
+📁 Project Structure
 AI_Smart_Farmer/
-│── static/               # CSS, JS, Images
-│── templates/            # HTML files
-│── model/                # ML models
-│── dataset/              # Training datasets
-│── app.py                # Main Flask app
-│── requirements.txt      # Python dependencies
-│── README.md             # Project documentation
-```
-
----
-
-## ⚙️ Installation
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/aadittyaranjan09/AI_Smart_Farmer.git
-```
-
-### 2️⃣ Navigate to Project Folder
-
-```bash
+├── data/                   # Local JSON storage (fallback)
+│   ├── predictions.json
+│   └── users.json
+├── models/                 # Mongoose schemas
+│   ├── CropData.js
+│   └── User.js
+├── public/                 # Frontend files
+│   ├── css/                # Stylesheets
+│   ├── js/                 # Client-side scripts
+│   ├── pages/              # Additional pages
+│   ├── index.html          # Landing page
+│   ├── Dashboard.html      # User dashboard
+│   ├── SignIn.html         # Login page
+│   ├── CreateAcc.html      # Registration page
+│   └── ...                 # Other HTML pages & assets
+├── src/                    # Backend source
+│   ├── config/             # DB & env configuration
+│   ├── lib/                # Utility libraries
+│   ├── middleware/          # Auth middleware
+│   ├── routes/             # API & auth routes
+│   └── app.js              # Express app setup
+├── .env                    # Environment variables
+├── server.js               # Entry point
+├── package.json
+└── render.yaml             # Render deployment config
+🚀 Getting Started
+Prerequisites
+Node.js (v18 or later)
+MongoDB Atlas account
+OpenWeather API key
+Installation
+# Clone the repository
+git clone https://github.com/Rudrapratap0005/AI_Smart_Farmer.git
 cd AI_Smart_Farmer
-```
 
-### 3️⃣ Install Dependencies
+# Install dependencies
+npm install
+Configure Environment
+Create or update the .env file:
 
-```bash
-pip install -r requirements.txt
-```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+OPENWEATHER_API_KEY=your_api_key
+Run the App
+# Development (with hot reload)
+npm run dev
 
-### 4️⃣ Run the Application
+# Production
+npm start
+The app will be available at http://localhost:5000
 
-```bash
-python app.py
-```
+📡 API Endpoints
+Method	Endpoint	Description	Auth
+POST	/api/auth/register	Create a new account	No
+POST	/api/auth/login	Login & get JWT token	No
+GET	/health	Server health check	No
+Protected routes require a JWT token in the Authorization: Bearer <token> header.
 
----
+🌐 Deployment
+This project is configured for Render deployment with the included render.yaml:
 
-## 💡 How It Works
+Fork this repo to your GitHub
+Connect to Render and create a new Blueprint
+Set MONGO_URI in environment variables
+Deploy — JWT_SECRET is auto-generated, NODE_VERSION defaults to 20
+🤝 Contributing
+Fork the repository
+Create a feature branch (git checkout -b feature/YourFeature)
+Commit your changes (git commit -m "Add YourFeature")
+Push to the branch (git push origin feature/YourFeature)
+Open a Pull Request
+📄 License
+Licensed under the ISC License.
 
-1. User enters farming-related data  
-2. System analyzes soil/environment conditions  
-3. AI model processes the information  
-4. Smart recommendations are generated  
-5. Farmer receives actionable insights  
-
----
-
-## 🎯 Objectives
-
-- Improve farming productivity
-- Reduce crop loss
-- Assist farmers using AI
-- Promote smart agriculture
-- Enable data-driven farming decisions
-
----
-
-## 📸 Screenshots
-
-Add your project screenshots here:
-
-```bash
-/screenshots/home.png
-/screenshots/dashboard.png
-```
-
----
-
-## 🔮 Future Enhancements
-
-- 🌍 Multilingual Support
-- 📡 IoT Sensor Integration
-- 📱 Mobile Application
-- 🛰️ Satellite Data Analysis
-- 🤝 Farmer Community Support
-- 🧠 Advanced Deep Learning Models
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository  
-2. Create a new branch  
-3. Make your changes  
-4. Commit changes  
-5. Push to your branch  
-6. Create a Pull Request  
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-## 👨‍💻 Author
-
-**Aditya Razz**
-
-GitHub: https://github.com/aadittyaranjan09
-
----
-
-## 🌟 Support
-
-If you like this project, give it a ⭐ on GitHub!
-
-Project Repository:  
-https://github.com/aadittyaranjan09/AI_Smart_Farmer
+👥 Team
+Rudrapratap — @Rudrapratap0005
+Aadittya Ranjan — @aadittyaranjan09
+Sumit Karan - @Sumit-karan123
